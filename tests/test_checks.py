@@ -142,6 +142,15 @@ class VariantTests(unittest.TestCase):
         self.assertEqual(kernel.status, "WARN")
         self.assertIn("Livepatch covers", kernel.reason)
 
+    def test_systemd_manager_is_reexecuted_not_restarted(self):
+        text = fixture("ubuntu-22.04-broken").replace("NEEDRESTART-SVC: cron.service\n",
+                                                      "NEEDRESTART-SVC: cron.service\nNEEDRESTART-SVC: systemd-manager\n")
+        c = {c.id: c for c in evaluate(text, "h").checks}["services"]
+        self.assertEqual(c.status, "WARN")
+        self.assertIn("sudo systemctl daemon-reexec", c.fix)
+        self.assertNotIn("restart systemd-manager", c.fix)
+        self.assertIn("sudo systemctl restart cron.service ssh.service", c.fix)
+
     def test_no_systemd_limits_the_schedule_check(self):
         text = fixture("ubuntu-24.04-healthy")
         text = text[:text.index("## systemd")] + text[text.index("## apt\n"):]

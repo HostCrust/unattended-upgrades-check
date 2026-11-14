@@ -483,8 +483,12 @@ def services(f: Facts, m: dict) -> Result:
         return Result("services", SKIP, "no restart needed among the processes visible without root", limited=limited)
     if not names:
         return Result("services", PASS, "no services need a restart")
+    # needrestart reports systemd itself as "systemd-manager": that one is re-executed, not restarted.
+    units = [n for n in names if n != "systemd-manager"]
+    fixes = (["sudo systemctl daemon-reexec"] if "systemd-manager" in names else []) + \
+            ([f"sudo systemctl restart {' '.join(units[:5])}"] if units else [])
     return Result("services", WARN, f"{len(names)} service(s) still run replaced library code: {some(names)}",
-                  f"sudo systemctl restart {' '.join(names[:5])}", limited)
+                  " && ".join(fixes), limited)
 
 
 def livepatch_state(f: Facts) -> tuple[str, str]:
