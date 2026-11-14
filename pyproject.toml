@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unattended-upgrades-check"
+dynamic = ["version"]
+description = "Is unattended-upgrades (or dnf-automatic) actually patching your servers? Read-only checks over SSH."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "DigiRDP, LLC (HostCrust)", email = "hello@hostcrust.com" }]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["unattended-upgrades", "dnf-automatic", "patch-management", "needrestart", "reboot-required",
+            "livepatch", "end-of-life", "ubuntu", "debian", "almalinux", "rocky-linux", "sysadmin"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.urls]
+Homepage = "https://github.com/HostCrust/unattended-upgrades-check"
+Issues = "https://github.com/HostCrust/unattended-upgrades-check/issues"
+"Patch Proof" = "https://github.com/HostCrust/patch-proof"
+HostCrust = "https://hostcrust.com"
+
+[project.scripts]
+uuc = "unattended_upgrades_check.cli:main"
+unattended-upgrades-check = "unattended_upgrades_check.cli:main"
+
+[tool.setuptools]
+packages = ["unattended_upgrades_check"]
+
+[tool.setuptools.package-data]
+unattended_upgrades_check = ["collect.sh", "eol.json"]
+
+[tool.setuptools.dynamic]
+version = { attr = "unattended_upgrades_check.__version__" }

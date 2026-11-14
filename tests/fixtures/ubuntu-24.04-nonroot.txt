@@ -1,0 +1,56 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=1001
+journal=no
+boot=1793001000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION_CODENAME=noble
+ID=ubuntu
+## kernel
+running=6.8.0-88-generic
+image=1793000000 6.8.0-88-generic
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+NextElapseUSecRealtime=Sat 2026-11-14 18:30:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+NextElapseUSecRealtime=Sun 2026-11-15 06:25:00 UTC
+## apt
+uu=ii 2.9.1+nmu4ubuntu1
+update-stamp=1794634800
+upgrade-stamp=1794637200
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+Unattended-Upgrade::Allowed-Origins "";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}:${distro_codename}-security";
+## apt-archives
+v=24.04,o=Ubuntu,a=noble,n=noble,l=Ubuntu,c=main,b=amd64
+v=24.04,o=Ubuntu,a=noble-security,n=noble,l=Ubuntu,c=main,b=amd64
+## apt-upgradable
+total=0
+security=0
+## uu-log
+log=no-permission
+## services
+tool=needrestart
+NEEDRESTART-VER: 3.6
+## livepatch
+## journal
+readable=no
+## end

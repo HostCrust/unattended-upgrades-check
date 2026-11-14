@@ -1,0 +1,90 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=0
+journal=yes
+boot=1791000000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION_CODENAME=jammy
+ID=ubuntu
+## kernel
+running=5.15.0-122-generic
+image=1790000000 5.15.0-122-generic
+image=1793606400 5.15.0-126-generic
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 05:40:00 UTC
+NextElapseUSecRealtime=Sat 2026-11-14 18:30:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=disabled
+ActiveState=inactive
+Result=success
+LastTriggerUSec=Sun 2026-11-08 06:30:00 UTC
+NextElapseUSecRealtime=
+
+Id=apt-daily-upgrade.service
+LoadState=loaded
+UnitFileState=static
+ActiveState=inactive
+Result=success
+ExecMainExitTimestamp=
+ExecMainStatus=0
+## apt
+uu=ii 2.8ubuntu1
+update-stamp=1794634800
+update-success-stamp=1794634800
+upgrade-stamp=1793527200
+hold=nginx-core
+reboot_required=1793606400
+reboot_pkg=linux-base
+reboot_pkg=linux-image-5.15.0-126-generic
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+Unattended-Upgrade::Allowed-Origins "";
+## apt-archives
+v=22.04,o=Ubuntu,a=jammy,n=jammy,l=Ubuntu,c=main,b=amd64
+v=22.04,o=Ubuntu,a=jammy-security,n=jammy,l=Ubuntu,c=main,b=amd64
+v=22.04,o=Ubuntu,a=jammy-updates,n=jammy,l=Ubuntu,c=main,b=amd64
+## apt-upgradable
+libssl3
+openssl
+curl
+libcurl4
+sudo
+total=9
+security=5
+## uu-log
+log=yes
+2026-11-01 10:00:01,001 INFO Starting unattended upgrades script
+2026-11-01 10:00:01,002 INFO Allowed origins are: 
+2026-11-01 10:00:04,300 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2026-11-08 06:30:01,001 INFO Starting unattended upgrades script
+2026-11-08 06:30:01,050 ERROR Lock could not be acquired (another package manager running?)
+## services
+tool=needrestart
+NEEDRESTART-VER: 3.5
+NEEDRESTART-KCUR: 5.15.0-122-generic
+NEEDRESTART-KEXP: 5.15.0-126-generic
+NEEDRESTART-KSTA: 3
+NEEDRESTART-SVC: cron.service
+NEEDRESTART-SVC: ssh.service
+## livepatch
+client=canonical-livepatch exit=1
+| Machine is not enabled. Please run 'sudo canonical-livepatch enable' with the token obtained from the Ubuntu Pro dashboard.
+## journal
+readable=yes
+2026-11-08T06:30:05+0000 apt.systemd.daily[2211]: E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1999 (apt-get)
+## end

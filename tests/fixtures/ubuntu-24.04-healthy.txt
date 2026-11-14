@@ -1,0 +1,96 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=0
+journal=yes
+boot=1793001000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+## kernel
+running=6.8.0-88-generic
+image=1793000000 6.8.0-88-generic
+image=1790000000 6.8.0-85-generic
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 05:40:00 UTC
+NextElapseUSecRealtime=Sat 2026-11-14 18:30:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 06:20:00 UTC
+NextElapseUSecRealtime=Sun 2026-11-15 06:25:00 UTC
+
+Id=apt-daily-upgrade.service
+LoadState=loaded
+UnitFileState=static
+ActiveState=inactive
+Result=success
+ExecMainExitTimestamp=Sat 2026-11-14 06:21:00 UTC
+ExecMainStatus=0
+## apt
+uu=ii 2.9.1+nmu4ubuntu1
+update-stamp=1794634800
+update-success-stamp=1794634800
+upgrade-stamp=1794637200
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+Unattended-Upgrade::Allowed-Origins "";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}:${distro_codename}";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}:${distro_codename}-security";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}ESMApps:${distro_codename}-apps-security";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}ESM:${distro_codename}-infra-security";
+Unattended-Upgrade::Package-Blacklist "";
+## apt-archives
+a=now
+v=24.04,o=Ubuntu,a=noble,n=noble,l=Ubuntu,c=main,b=amd64
+v=24.04,o=Ubuntu,a=noble-security,n=noble,l=Ubuntu,c=main,b=amd64
+v=24.04,o=Ubuntu,a=noble-security,n=noble,l=Ubuntu,c=universe,b=amd64
+v=24.04,o=Ubuntu,a=noble-updates,n=noble,l=Ubuntu,c=main,b=amd64
+## apt-upgradable
+total=1
+security=0
+## uu-log
+log=yes
+2026-11-13 06:21:02,101 INFO Starting unattended upgrades script
+2026-11-13 06:21:02,102 INFO Allowed origins are: o=Ubuntu,a=noble, o=Ubuntu,a=noble-security
+2026-11-13 06:21:02,103 INFO Initial blacklist: 
+2026-11-13 06:21:09,456 INFO Packages that will be upgraded: libexample1 example-tools
+2026-11-13 06:21:09,457 INFO Writing dpkg log to /var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+2026-11-13 06:21:31,789 INFO All upgrades installed
+2026-11-14 06:20:01,201 INFO Starting unattended upgrades script
+2026-11-14 06:20:01,202 INFO Allowed origins are: o=Ubuntu,a=noble, o=Ubuntu,a=noble-security
+2026-11-14 06:20:01,203 INFO Initial blacklist: 
+2026-11-14 06:20:07,900 INFO No packages found that can be upgraded unattended and no pending auto-removals
+## services
+tool=needrestart
+NEEDRESTART-VER: 3.6
+NEEDRESTART-KCUR: 6.8.0-88-generic
+NEEDRESTART-KEXP: 6.8.0-88-generic
+NEEDRESTART-KSTA: 1
+## livepatch
+module=lkp_Ubuntu_6_8_0_88_generic_131 1
+client=canonical-livepatch exit=0
+| last check: 41 minutes ago
+| kernel: 6.8.0-88.89-generic
+| server check-in: succeeded
+| kernel state: kernel series 6.8 is covered by Livepatch
+| patch state: all applicable livepatch modules inserted
+## journal
+readable=yes
+## end

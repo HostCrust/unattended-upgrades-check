@@ -1,0 +1,62 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=0
+journal=yes
+boot=1792000000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION_CODENAME=bullseye
+ID=debian
+## kernel
+running=5.10.0-35-amd64
+image=1791900000 5.10.0-35-amd64
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 05:40:00 UTC
+NextElapseUSecRealtime=Sat 2026-11-14 19:02:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 06:20:00 UTC
+NextElapseUSecRealtime=Sun 2026-11-15 06:40:00 UTC
+## apt
+uu=ii 2.8
+update-stamp=1792468800
+upgrade-stamp=1792468800
+dpkg_interrupted=yes
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "0";
+Unattended-Upgrade::Origins-Pattern "";
+Unattended-Upgrade::Origins-Pattern:: "origin=Debian,codename=${distro_codename},label=Debian";
+Unattended-Upgrade::Origins-Pattern:: "origin=Debian,codename=${distro_codename},label=Debian-Security";
+## apt-archives
+v=11.11,o=Debian,a=oldoldstable,n=bullseye,l=Debian,c=main,b=amd64
+v=11,o=Debian,a=oldoldstable-security,n=bullseye-security,l=Debian-Security,c=main,b=amd64
+## apt-upgradable
+total=0
+security=0
+## uu-log
+log=yes
+2026-10-20 06:31:00,100 INFO Starting unattended upgrades script
+2026-10-20 06:31:00,101 INFO Allowed origins are: origin=Debian,codename=bullseye,label=Debian, origin=Debian,codename=bullseye,label=Debian-Security
+2026-10-20 06:31:05,700 INFO Packages that will be upgraded: example-daemon
+2026-10-20 06:31:20,300 WARNING Package example-daemon has conffile prompt and needs to be upgraded manually
+## services
+## livepatch
+## journal
+readable=yes
+## end

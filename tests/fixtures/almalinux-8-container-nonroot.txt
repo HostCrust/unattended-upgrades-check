@@ -1,0 +1,42 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=1000
+journal=no
+boot=1794500000
+systemd=yes
+container=lxc
+## os-release
+PRETTY_NAME="AlmaLinux 8.10 (Cerulean Leopard)"
+NAME="AlmaLinux"
+VERSION_ID="8.10"
+ID="almalinux"
+## kernel
+running=6.8.12-4-pve
+## systemd
+Id=dnf-automatic.timer
+LoadState=not-found
+UnitFileState=
+ActiveState=inactive
+Result=success
+
+Id=dnf-automatic-install.timer
+LoadState=not-found
+UnitFileState=
+ActiveState=inactive
+Result=success
+## dnf
+last_install=1794000000
+reboot_exit=1
+reboot_out=No such command: needs-restarting. Please use /usr/bin/dnf --help
+## dnf-security
+exit=1
+Error: Cache-only enabled but no cache for 'baseos'
+## services
+tool=needs-restarting
+No such command: needs-restarting. Please use /usr/bin/dnf --help
+## livepatch
+## journal
+readable=no
+## end

@@ -1,0 +1,61 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0000
+uid=0
+journal=yes
+boot=1793900000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="AlmaLinux 9.6 (Sage Margay)"
+NAME="AlmaLinux"
+VERSION_ID="9.6"
+ID="almalinux"
+ID_LIKE="rhel centos fedora"
+## kernel
+running=5.14.0-570.52.1.el9_6.x86_64
+image=1793800000 5.14.0-570.52.1.el9_6.x86_64
+image=1791000000 5.14.0-570.49.1.el9_6.x86_64
+## systemd
+Id=dnf-automatic.timer
+LoadState=loaded
+UnitFileState=disabled
+ActiveState=inactive
+Result=success
+LastTriggerUSec=
+NextElapseUSecRealtime=
+
+Id=dnf-automatic-install.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 06:20:00 UTC
+NextElapseUSecRealtime=Sun 2026-11-15 06:14:00 UTC
+
+Id=dnf-automatic-install.service
+LoadState=loaded
+UnitFileState=static
+ActiveState=inactive
+Result=success
+ExecMainExitTimestamp=Sat 2026-11-14 06:23:10 UTC
+ExecMainStatus=0
+## dnf
+automatic=4.14.0-25.el9.alma.1
+conf_upgrade_type=security
+conf_download_updates=yes
+conf_apply_updates=no
+conf_reboot=never
+last_install=1794637390
+reboot_exit=0
+reboot_out=No core libraries or services have been updated since boot-up.
+reboot_out=Reboot should not be necessary.
+## dnf-security
+exit=0
+## services
+tool=needs-restarting
+## livepatch
+## journal
+readable=yes
+## end

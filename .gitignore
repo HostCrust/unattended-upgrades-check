@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+# Reports and collector output from real servers stay out of the repo.
+*.html
+*.prom
+/reports/
+# Internal publishing notes.
+RELEASE-NOTES-FOR-PUBLISHER.md

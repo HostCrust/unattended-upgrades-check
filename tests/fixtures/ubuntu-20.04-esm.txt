@@ -1,0 +1,71 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=-0500
+uid=0
+journal=yes
+boot=1794100000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+NAME="Ubuntu"
+VERSION_ID="20.04"
+VERSION_CODENAME=focal
+ID=ubuntu
+## kernel
+running=5.4.0-216-generic
+image=1794000000 5.4.0-216-generic
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 04:10:00 UTC
+NextElapseUSecRealtime=Sat 2026-11-14 16:44:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 06:20:00 UTC
+NextElapseUSecRealtime=Sun 2026-11-15 06:33:00 UTC
+## apt
+uu=ii 2.8ubuntu1~20.04
+update-stamp=1794629400
+update-success-stamp=1794629400
+upgrade-stamp=1794637200
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+Unattended-Upgrade::Allowed-Origins "";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}:${distro_codename}";
+Unattended-Upgrade::Allowed-Origins:: "${distro_id}:${distro_codename}-security";
+Unattended-Upgrade::Package-Blacklist "";
+Unattended-Upgrade::Package-Blacklist:: "linux-";
+## apt-archives
+v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=main,b=amd64
+v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=main,b=amd64
+v=20.04,o=UbuntuESM,a=focal-infra-security,n=focal,l=UbuntuESM,c=main,b=amd64
+v=20.04,o=UbuntuESMApps,a=focal-apps-security,n=focal,l=UbuntuESMApps,c=main,b=amd64
+## apt-upgradable
+libxml2
+python3.8
+total=2
+security=2
+## uu-log
+log=yes
+2026-11-14 01:20:01,000 INFO Starting unattended upgrades script
+2026-11-14 01:20:01,001 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security
+2026-11-14 01:20:01,002 INFO Initial blacklist: linux-
+2026-11-14 01:20:06,500 INFO No packages found that can be upgraded unattended and no pending auto-removals
+## services
+tool=needrestart
+NEEDRESTART-VER: 3.4
+NEEDRESTART-KSTA: 1
+## livepatch
+## journal
+readable=yes
+## end

@@ -1,0 +1,64 @@
+# uuc-collector 1
+## meta
+now=1794646800
+utc_offset=+0100
+uid=1000
+journal=yes
+boot=1793500000
+systemd=yes
+container=none
+## os-release
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION_CODENAME=bookworm
+ID=debian
+## kernel
+running=6.1.0-41-amd64
+image=1793400000 6.1.0-41-amd64
+image=1791000000 6.1.0-40-amd64
+## systemd
+Id=apt-daily.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 05:40:00 UTC
+NextElapseUSecRealtime=Sat 2026-11-14 17:05:00 UTC
+
+Id=apt-daily-upgrade.timer
+LoadState=loaded
+UnitFileState=enabled
+ActiveState=active
+Result=success
+LastTriggerUSec=Sat 2026-11-14 06:20:00 UTC
+NextElapseUSecRealtime=Sun 2026-11-15 06:11:00 UTC
+## apt
+uu=ii 2.9.1+nmu3
+update-stamp=1794634800
+upgrade-stamp=1794637200
+## apt-config
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+Unattended-Upgrade::Origins-Pattern "";
+Unattended-Upgrade::Origins-Pattern:: "origin=Debian,codename=${distro_codename},label=Debian";
+Unattended-Upgrade::Origins-Pattern:: "origin=Debian,codename=${distro_codename},label=Debian-Security";
+Unattended-Upgrade::Origins-Pattern:: "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+## apt-archives
+v=12.12,o=Debian,a=stable,n=bookworm,l=Debian,c=main,b=amd64
+v=12,o=Debian,a=stable-security,n=bookworm-security,l=Debian-Security,c=main,b=amd64
+v=12-updates,o=Debian,a=stable-updates,n=bookworm-updates,l=Debian,c=main,b=amd64
+## apt-upgradable
+total=0
+security=0
+## uu-log
+log=yes
+2026-11-14 07:20:01,500 INFO Starting unattended upgrades script
+2026-11-14 07:20:01,501 INFO Allowed origins are: origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian-Security, origin=Debian,codename=bookworm-security,label=Debian-Security
+2026-11-14 07:20:09,800 INFO Packages that will be upgraded: libexample3
+2026-11-14 07:20:30,020 INFO All upgrades installed
+## services
+## livepatch
+## journal
+readable=yes
+## end
