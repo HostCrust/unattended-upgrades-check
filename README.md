@@ -1,5 +1,7 @@
 # Is unattended-upgrades (or dnf-automatic) actually patching your servers?
 
+**Docs and examples:** [hostcrust.com/tools/unattended-upgrades-check](https://hostcrust.com/tools/unattended-upgrades-check/)
+
 `unattended-upgrades-check` (`uuc`) answers that for one server or a whole fleet, ten servers at a time, in seconds each.
 It runs 12 read-only checks over SSH on Ubuntu, Debian, AlmaLinux and Rocky Linux and gives each
 server PASS, WARN or FAIL, with the reason and the fix. Nothing is installed on the servers, no
@@ -215,4 +217,4 @@ see [NOTICE](NOTICE).
 [nagios]: https://github.com/Josef-Friedrich/check_unattended_upgrades
 [needrestart]: https://github.com/liske/needrestart
 
-Want this checked every day for every server, with receipts? HostCrust (launching soon): https://hostcrust.com
+Docs, examples and comparisons: https://hostcrust.com/tools/unattended-upgrades-check/ · Made by HostCrust, guarded operations for Linux servers (early access): https://hostcrust.com/
